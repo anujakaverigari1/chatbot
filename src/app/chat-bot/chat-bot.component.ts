@@ -5,6 +5,7 @@ declare let window: any;
 
 export class Query{
   constructor(
+    public id: number,
     public query: string,
     public emailId: string){}
 }
@@ -39,7 +40,7 @@ export class ChatBotComponent implements OnInit {
   }
 
   sendQuery(query){
-    this.q=new Query(query, this.email);
+    this.q=new Query(1,query, this.email);
     this.qService.postQuery(this.q).subscribe();
   }
 

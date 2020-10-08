@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { HrRespondComponent } from './hr-respond/hr-respond.component';
 import { HrtokensComponent } from './hrtokens/hrtokens.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path: 'hrtokens', component: HrtokensComponent},
-  {path:'bot',component:ChatBotComponent}
+  {path:'bot',component:ChatBotComponent},
+  {path:'hr-response',component:HrRespondComponent}
 ];
 
 @NgModule({

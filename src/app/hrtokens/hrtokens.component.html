@@ -13,8 +13,7 @@
         <tr *ngFor="let e of q">
             <td>{{e.emailId}}</td>
             <td>{{e.query}}</td>
-            <td><input type="text" name="answer" [(ngModel)]="answer"></td>
-            <td><button (click)=respond(answer) class="btn btn-outline-success">Respond</button></td>
+            <td><button (click)=respond() class="btn btn-outline-success">Respond</button></td>
         </tr>
     </tbody>
 </table>

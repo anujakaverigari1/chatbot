@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a routerLink="/login" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="center">
+    <div class="p">
+        <input type="text" name="response" id="response" placeholder="Enter your response here" [(ngModel)]="response">
+    </div>
+    <div class="p">
+        <button (click)="submitResponse()">Submit Response</button>
+    </div>
+</div>

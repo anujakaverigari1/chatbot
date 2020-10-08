@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { ChatBotComponent } from './chat-bot/chat-bot.component';
-import { HrtokensComponent } from './hrtokens/hrtokens.component'
+import { HrtokensComponent } from './hrtokens/hrtokens.component';
+import { HrRespondComponent } from './hr-respond/hr-respond.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HrtokensComponent } from './hrtokens/hrtokens.component'
     LoginComponent,
     RegisterComponent,
     ChatBotComponent,
-    HrtokensComponent
+    HrtokensComponent,
+    HrRespondComponent,
   ],
   imports: [
     BrowserModule,

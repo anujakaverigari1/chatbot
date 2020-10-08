@@ -13,6 +13,10 @@ export class QueryService {
     return this.http.post(`http://localhost:8080/sendQuery`,query);
   }
 
+  postResponse(response){
+    return this.http.post(`http://localhost:8080/sendResponse`,response);
+  }
+
   getQueries(){
     return this.http.get<Query[]>(`http://localhost:8080/getAllQueries`);
   }
