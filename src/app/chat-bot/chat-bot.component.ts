@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from '../service/register.service';
+import { AuthenticationService } from '../service/authentication.service';
+import { QueryService } from '../service/query.service';
+
+export class Query{
+  constructor(
+    public query: string,
+    public emailId: string){}
+}
 
 @Component({
   selector: 'app-chat-bot',
@@ -7,19 +14,20 @@ import { RegisterService } from '../service/register.service';
   styleUrls: ['./chat-bot.component.css']
 })
 export class ChatBotComponent implements OnInit {
-  query=""
+  q:Query;
+  query: any;
+  email: any;
 
-  constructor(private queryService:RegisterService) { }
+  constructor(private authenticationservice: AuthenticationService,
+    private qService: QueryService) { }
 
   ngOnInit(): void {
+    this.email = this.authenticationservice.email();
   }
 
-  sendQueryToHr(){
-    let employeeEmail = localStorage.getItem("empEmail")
-    let data = new FormData();
-    data.append("empEmail",employeeEmail)
-    data.append("query",this.query)
-    this.queryService.executeQueryService(data).subscribe()
+  sendQuery(query){
+    this.q=new Query(query, this.email);
+    this.qService.postQuery(this.q).subscribe();
   }
 
 }

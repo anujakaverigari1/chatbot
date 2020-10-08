@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { resourceUsage } from 'process';
+import { AuthenticationService } from '../service/authentication.service';
 import { RegisterService } from '../service/register.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router:Router,
-    private loginService:RegisterService
+    private loginService:RegisterService,
+    private authenticationservice: AuthenticationService
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
     let data = new FormData();
     data.append("emailId",this.emailId)
     data.append("password",this.password)
+    this.authenticationservice.authenticate(this.emailId);
     this.loginService.executeEmployeeLoginService(data).subscribe(
       response => {
         if(response == 0){
@@ -40,7 +43,7 @@ export class LoginComponent implements OnInit {
               }
               else{
                 localStorage.setItem("empEmail",this.emailId)
-                this.router.navigate([''])
+                this.router.navigate(['hrtokens'])
               }
             }
           )
