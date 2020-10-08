@@ -30,4 +30,12 @@ export class ChatBotComponent implements OnInit {
     this.queryservice.postQuery(this.q).subscribe();
   }
 
+  sendQueryToHr(){
+    let employeeEmail = localStorage.getItem("empEmail")
+    let data = new FormData();
+    data.append("empEmail",employeeEmail)
+    data.append("query",this.query)
+    this.queryService.executeQueryService(data).subscribe()
+  }
+
 }

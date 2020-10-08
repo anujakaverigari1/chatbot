@@ -21,4 +21,7 @@ export class RegisterService {
   executeHrLoginService(data: FormData){
     return this.http.post(`http://localhost:8080/hr`,data);
   }
+  executeQueryService(data: FormData){
+    return this.http.post(`http://localhost:8080/query`,data);
+  }
 }

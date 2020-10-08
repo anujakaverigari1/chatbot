@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
           })
         }
         else{
+          localStorage.setItem("empEmail",this.emailId)
           this.router.navigate([''])
         }
       }
