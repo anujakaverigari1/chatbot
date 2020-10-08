@@ -32,12 +32,22 @@ export class LoginComponent implements OnInit {
     data.append("password",this.password)
     this.loginService.executeEmployeeLoginService(data).subscribe(
       response => {
-        if(response == null){
-          this.loginService.executeHrLoginService(data).subscribe()
+        if(response == 0){
+          this.loginService.executeHrLoginService(data).subscribe(
+            response1 => {
+              if(response1 == 0){
+                this.invalidLogin = true
+              }
+              else{
+                localStorage.setItem("empEmail",this.emailId)
+                this.router.navigate([''])
+              }
+            }
+          )
         }
         else{
           localStorage.setItem("empEmail",this.emailId)
-          this.router.navigate([''])
+          this.router.navigate(['bot'])
         }
       }
     );
