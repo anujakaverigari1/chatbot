@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
           this.loginService.executeHrLoginService(data).subscribe()
         }
         else{
+          localStorage.setItem("empEmail",this.emailId)
           this.router.navigate([''])
         }
       }

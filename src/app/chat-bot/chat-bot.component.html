@@ -1,6 +1,10 @@
-<iframe class="center"
+<iframe
     allow="microphone;"
     width="350"
     height="430"
     src="https://console.dialogflow.com/api-client/demo/embedded/38bf7d23-9dc9-4080-98ef-c06f57dfddcf">
-</iframe>
+</iframe>&nbsp;&nbsp;&nbsp;&nbsp;
+<div>
+    <input type="text" name="query" id="query" placeholder="enter your query here" [(ngModel)]="query">&nbsp;
+    <button (click)="sendQueryToHr()" class="btn btn-success">Contact HR directly</button>
+</div>
