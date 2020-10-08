@@ -7,14 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
-import { ChatBotComponent } from './chat-bot/chat-bot.component'
+import { ChatBotComponent } from './chat-bot/chat-bot.component';
+import { HrtokensComponent } from './hrtokens/hrtokens.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    HrtokensComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<h1>Queries</h1>
+<div class="container">
+<table class="table">
+    <caption></caption>
+    <thead>
+        <tr>
+            <th id="id1">Email ID</th>
+            <th id="id2">Query</th>
+            <th id="id3">Your Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of q">
+            <td>{{e.emailId}}</td>
+            <td>{{e.query}}</td>
+            <td><input type="text" name="answer" [(ngModel)]="answer"></td>
+            <td><button (click)=respond(answer) class="btn btn-outline-success">Respond</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
